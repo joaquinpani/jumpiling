@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://b3m3b7giyaans" path="res://cropsplayer.png" id="2_ukil5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uqxed"]
-radius = 67.0
-height = 182.0
+radius = 34.285713
+height = 119.99999
 
 [sub_resource type="Animation" id="Animation_8o684"]
 length = 0.001
@@ -98,8 +98,15 @@ _data = {
 &"quieto": SubResource("Animation_7st5j")
 }
 
-[node name="Node2D" type="CharacterBody2D" unique_id=829674104]
+[node name="Node2D" type="CharacterBody2D" unique_id=829674104 groups=["player"]]
+scale = Vector2(0.7, 0.7)
 script = ExtResource("1_omvyu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1068795820 groups=["player"]]
+shape = SubResource("CapsuleShape2D_uqxed")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2135734757]
+libraries/ = SubResource("AnimationLibrary_7st5j")
 
 [node name="cuerpo" type="Sprite2D" parent="." unique_id=1635713024]
 position = Vector2(10.999999, -30.999998)
@@ -111,9 +118,3 @@ texture = ExtResource("2_ukil5")
 position = Vector2(-99.999985, -189.99997)
 scale = Vector2(0.19999997, 0.19999997)
 texture = ExtResource("2_8o684")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1068795820]
-shape = SubResource("CapsuleShape2D_uqxed")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2135734757]
-libraries/ = SubResource("AnimationLibrary_7st5j")

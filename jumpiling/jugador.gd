@@ -17,4 +17,8 @@ func _physics_process(delta: float) -> void:
 		$AnimationPlayer.play("moverse",1.0)
 	if velocity.x == 0 and velocity.y == 0 :
 		$AnimationPlayer.play("quieto", 0.3)
+	
 	move_and_slide()
+	
+func muerte():
+		get_tree().change_scene_to_file("res://muerte.tscn")
